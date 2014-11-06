@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.asimkh.sunshine.sunshine.SplashActivity"
+            android:label="@string/title_activity_splash" >
+        </activity>
     </application>
 
 </manifest>

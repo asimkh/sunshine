@@ -4,6 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class MainActivity extends Activity {
@@ -11,7 +17,44 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.splash);
+
+        Thread logoTimer = new Thread() {
+            public void run(){
+                try{
+                    int logoTimer = 0;
+                    while(logoTimer < 5000){
+                        sleep(100);
+                        logoTimer = logoTimer +100;
+                    };
+                    startActivity(new Intent("com.tutorial.CLEARSCREEN"));
+                }
+
+                catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+
+                finally{
+                    finish();
+                }
+            }
+        };
+
+        logoTimer.start();
+    }
+
+
+        //ListView list_View_forecast = (ListView) findViewById(R.id.list_View_forecast);
+
+       // String[] items = { "Milk", "Butter", "Yogurt", "Toothpaste", "Ice Cream" };
+
+       // ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+       //         android.R.layout.simple_list_item_1, items);
+
+        //list_View_forecast.setAdapter(adapter);
+
+
     }
 
 
