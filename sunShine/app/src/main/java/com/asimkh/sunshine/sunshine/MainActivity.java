@@ -31,6 +31,15 @@ public class MainActivity extends Activity {
             }
         });
 
+        Button PayPalBtn = (Button) findViewById(R.id.payPalButton);
+
+        PayPalBtn.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity( new Intent(MainActivity.this, payment.class));
+            }
+        });
+
         /*
         ListView listView1 = (ListView) findViewById(R.id.list_View_forecast);
 
@@ -67,5 +76,7 @@ public class MainActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
 }
