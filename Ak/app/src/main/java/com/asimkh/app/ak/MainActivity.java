@@ -1,18 +1,9 @@
-package com.asimkh.sunshine.sunshine;
+package com.asimkh.app.ak;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 
 public class MainActivity extends Activity {
@@ -21,29 +12,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Button WeatherBtn = (Button) findViewById(R.id.weatherButton);
-
-        WeatherBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity( new Intent(MainActivity.this, weatherList.class));
-            }
-        });
-
-        /*
-        ListView listView1 = (ListView) findViewById(R.id.list_View_forecast);
-
-        String[] items = { "Milk", "Butter", "Yogurt", "Toothpaste", "Ice Cream" };
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, items);
-
-        listView1.setAdapter(adapter);
-
-
-    }*/
-}
+    }
 
 
     @Override
@@ -67,5 +36,4 @@ public class MainActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-
 }

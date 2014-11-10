@@ -1,55 +1,49 @@
 package com.asimkh.sunshine.sunshine;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
+import static com.asimkh.sunshine.sunshine.R.id.list;
 
 
-public class MainActivity extends Activity {
+public class weatherList extends Activity {
+
+
+    ArrayList<String> ItemNameList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.listeitem);
 
-        Button WeatherBtn = (Button) findViewById(R.id.weatherButton);
+        ListView ItemList =(ListView)findViewById(list);
+        ItemNameList = new ArrayList<String>();
+        ItemNameList.add("DOG");
+        ItemNameList.add("CAT");
 
-        WeatherBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity( new Intent(MainActivity.this, weatherList.class));
-            }
-        });
-
-        /*
-        ListView listView1 = (ListView) findViewById(R.id.list_View_forecast);
-
-        String[] items = { "Milk", "Butter", "Yogurt", "Toothpaste", "Ice Cream" };
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, items);
-
-        listView1.setAdapter(adapter);
+        // Create The Adapter with passing ArrayList as 3rd parameter
+        ArrayAdapter<String> arrayAdapter =
+                new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, ItemNameList);
+        // Set The Adapter
+        ItemList.setAdapter(arrayAdapter);
 
 
-    }*/
-}
+
+    }
+
+
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_weather_list, menu);
         return true;
     }
 
@@ -67,5 +61,4 @@ public class MainActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-
 }
