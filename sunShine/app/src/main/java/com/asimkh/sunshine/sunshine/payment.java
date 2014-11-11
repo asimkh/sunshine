@@ -28,6 +28,7 @@ public class payment extends Activity {
 
     private static final String CONFIG_ENVIRONMENT = PayPalConfiguration.ENVIRONMENT_PRODUCTION;
     private static final String CONFIG_CLIENT_ID = "AVgrmxBcJsBvrymRzZOGPNsKSQfD4-EhqB79h0ValhkQzw8M3AEqicl2yy6E";
+    private static final String CONFIG_RECEIVER_EMAIL = "asimkh@hotmail.com";
     private static final int REQUEST_PAYPAL_PAYMENT = 100;
 
     private static PayPalConfiguration configPayPyal = new PayPalConfiguration()
@@ -52,7 +53,10 @@ public class payment extends Activity {
          /* call PayPal Services */
 
         Intent initPayPal = new Intent(this, PayPalService.class);
+
+        //initPayPal.putExtra(PaymentActivity.CONNECTIVITY_SERVICE)
         initPayPal.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, configPayPyal);
+
         startService(initPayPal);
 
         /* Paypayment button */
@@ -63,9 +67,12 @@ public class payment extends Activity {
         @Override
         public void onClick(View v) {
             PayPalPayment thingToBuy = new PayPalPayment(new BigDecimal(1), "USD", "SunShine App", PayPalPayment.PAYMENT_INTENT_SALE);
-            Intent intentPayPal = new Intent(payment.this, PaymentActivity.class);
 
+            Intent intentPayPal = new Intent(payment.this, PaymentActivity.class);
+            intentPayPal.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, configPayPyal);
             intentPayPal.putExtra(PaymentActivity.EXTRA_PAYMENT, thingToBuy);
+
+
             startActivityForResult(intentPayPal, REQUEST_PAYPAL_PAYMENT);
                 }
 

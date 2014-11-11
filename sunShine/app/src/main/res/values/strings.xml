@@ -15,6 +15,14 @@
     <string name="title_activity_payment">payment</string>
     <string name="payPalHeadingText">Select your payment</string>
     <string name="payPalButtonText">Pay $100</string>
+    <string name="feedbackButtonText">Feedback</string>
+    <string name="title_activity_feedback">feedback</string>
+
+    <string name="sharefeedbackText">Share your feedback.</string>
+    <string name="sendfeedback">send</string>
+    <string name="compose_email">send</string>
+
+
 
 
 </resources>
