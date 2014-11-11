@@ -21,4 +21,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile files('/Users/agha.asim/Android/projects/sunShine/libraries/PayPalAndroidSDK-2.6.1.jar')
+    compile files('/Users/agha.asim/Android/projects/sunShine/libraries/PayPal_MPL.jar')
 }

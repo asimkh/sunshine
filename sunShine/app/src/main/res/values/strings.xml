@@ -13,5 +13,8 @@
     <string name="title_activity_data">data</string>
     <string name="title_activity_weather_list">weatherList</string>
     <string name="title_activity_payment">payment</string>
+    <string name="payPalHeadingText">Select your payment</string>
+    <string name="payPalButtonText">Pay $100</string>
+
 
 </resources>

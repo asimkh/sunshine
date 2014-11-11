@@ -81,6 +81,8 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 14 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="PayPal_MPL" level="project" />
+    <orderEntry type="library" exported="" name="PayPalAndroidSDK-2.6.1" level="project" />
   </component>
 </module>
 
