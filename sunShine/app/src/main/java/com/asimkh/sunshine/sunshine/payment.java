@@ -27,8 +27,12 @@ import static android.view.View.OnClickListener;
 public class payment extends Activity {
 
     private static final String CONFIG_ENVIRONMENT = PayPalConfiguration.ENVIRONMENT_PRODUCTION;
+<<<<<<< HEAD
     private static final String CONFIG_CLIENT_ID = "AVgrmxBcJsBvrymRzZOGPNsKSQfD4-EhqB79h0ValhkQzw8M3AEqicl2yy6E";
     private static final String CONFIG_RECEIVER_EMAIL = "asimkh@hotmail.com";
+=======
+    private static final String CONFIG_CLIENT_ID = "ID";
+>>>>>>> FETCH_HEAD
     private static final int REQUEST_PAYPAL_PAYMENT = 100;
 
     private static PayPalConfiguration configPayPyal = new PayPalConfiguration()
