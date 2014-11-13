@@ -32,7 +32,7 @@
             android:name="com.asimkh.sunshine.sunshine.weatherList"
             android:label="@string/title_activity_weather_list"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
+            android:theme="@android:style/Theme.Light" >
         </activity>
         <activity
             android:name="com.asimkh.sunshine.sunshine.payment"

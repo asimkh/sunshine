@@ -23,6 +23,9 @@
     <string name="compose_email">send</string>
 
 
+    <string name="action_refresh" translatable="false">Refresh</string>
+
+
 
 
 </resources>

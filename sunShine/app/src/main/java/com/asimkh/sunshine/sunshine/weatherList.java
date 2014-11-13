@@ -67,6 +67,8 @@ public class weatherList extends Activity {
 
 
 
+
+
     }
 
     /*
@@ -78,6 +80,8 @@ public class weatherList extends Activity {
         // This above line close correctly
     }
     */
+
+
 
 
     @Override
@@ -97,7 +101,9 @@ public class weatherList extends Activity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_refresh) {
+            weatherListTask weatherTask = new weatherListTask();
+            weatherTask.execute();
             return true;
         }
 
@@ -156,7 +162,7 @@ public class weatherList extends Activity {
                 }
                 forecastJsonStr = buffer.toString();
             } catch (IOException e) {
-                Log.e("PlaceholderFragment", "Error ", e);
+                Log.e(LOG_TAG, "Error ", e);
                 // If the code didn't successfully get the weather data, there's no point in attempting
                 // to parse it.
                 forecastJsonStr = null;
@@ -168,7 +174,7 @@ public class weatherList extends Activity {
                     try {
                         reader.close();
                     } catch (final IOException e) {
-                        Log.e("PlaceholderFragment", "Error closing stream", e);
+                        Log.e(LOG_TAG, "Error closing stream", e);
                     }
                 }
             }
